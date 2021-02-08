@@ -1,0 +1,17 @@
+curl --location --request GET 'http://localhost:3000/memes' 
+
+curl --location --request GET 'http://localhost:3000/memes/602049259e8d9e55938b70df'
+
+curl --location --request POST 'http://localhost:3000/memes' \
+
+--header 'Content-Type: application/json' \
+
+--data-raw '{
+
+"name": "ashok kumar",
+
+"url": "https://images.pexels.com/photos/3573382/pexels-photo-3573382.jpeg",
+
+"caption": "This is a meme"
+
+}'

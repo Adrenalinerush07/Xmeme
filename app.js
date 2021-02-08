@@ -10,6 +10,7 @@ app.use(bodyParser.urlencoded({extended: true}));
 app.set("view engine", "ejs");
 app.use(express.static('public'));
 app.use(methodOverride('_method'))
+app.use(express.json())
 
 // Conecting to mongodb
 mongoose.connect('mongodb://localhost:27017/Xmeme', {
