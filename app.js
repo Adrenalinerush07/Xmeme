@@ -60,7 +60,7 @@ app.patch('/updated/:id', async (req, res) => {
     res.status(201).redirect('/show'); 
   }
   catch (err){
-    res.status(404).send("error",{error: err})
+    res.status(404).render("error",{error: err})
   }
 })
 
@@ -71,6 +71,12 @@ app.post("/add", async(req, res) => {
     const url = req.body.url;
     const caption = req.body.caption;
 
+    const check = Post.findOne({url : url})
+    if( check !== null){
+      // res.redirect('/');
+      res.render('error',{error:'Post already present!'})
+      return;
+    }
     const savePost = new Post({
       name,
       url,
@@ -80,7 +86,7 @@ app.post("/add", async(req, res) => {
     res.status(201).redirect("show")
   }
   catch (err){
-    res.status(404).send("error",{error: err})
+    res.status(404).render("error",{error: err})
   }
 
 });
@@ -138,13 +144,13 @@ app.post("/memes", async(req, res) => {
     res.status(201).send(saved.id)
   }
   catch(err){
-    res.status(404).send("error",{error: 'Unable to post'})
+    res.status(404).render("error",{error: 'Unable to post'})
   }
 
 });
 
 // updating a meme
-app.patch('/meme/:id', async (req, res) => {
+app.patch('/memes/:id', async (req, res) => {
   try{
     const memes = await Post.findById(req.params.id)
     if(memes === null){
@@ -159,7 +165,7 @@ app.patch('/meme/:id', async (req, res) => {
     return;
   }
   catch (err){
-    res.status(404).send("error",{error: 'Unable to post'})
+    res.status(404).render("error",{error: 'Unable to post'})
   }
 })
 
