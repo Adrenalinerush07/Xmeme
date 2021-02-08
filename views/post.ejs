@@ -1,14 +1,23 @@
 <%- include("partials/header") %>
-<div id="tittle">Post it!</div>
+<!-- <div id="tittle">Post it!</div> -->
 
-<form action="/memes" method="POST">
-    <label for="search"><b>Name:</b></label>
-    <input  type="text" placeholder="Name"  name="name" required><br>
-    <label for="search"><b>URL:</b></label>
-    <input  type="text" placeholder="Link" name="url" required><br>
-    <label for="search"><b>Caption:</b></label>
-    <input  type="text" placeholder="Add a catchy label" name="caption" required><br>
-    <button class=btn >submit</button>
-</form>
+<div class="container">
+    <header>
+        <a href="/">Post it! </a>
+        <a href="/show">Memes</a>
+        <a href="/contact">Contact</a>
+    </header>
+    
+    <form action="/add" method="POST">
+        <label for="search"><b>Name:</b></label>
+        <input  type="text" placeholder="Name"  name="name" required><br>
+        <label for="search"><b>URL:</b></label>
+        <input  type="text" placeholder="Link" name="url" required><br>
+        <label for="search"><b>Caption:</b></label>
+        <input  type="text" placeholder="Add a catchy label" name="caption" required><br>
+        <button class=btn >submit</button>
+    </form>
+    
+</div>
 
 <%- include("partials/footer") %>

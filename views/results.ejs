@@ -1,21 +1,34 @@
 <%- include("partials/header") %>
-<% if(memes.length !== null){ %>
-   
-      <div id="tittle">Recent Memes</div>
+
+
+  <header>
+    <a href="/">Post it! </a>
+    <a href="/show">Memes</a>
+    <a href="/contact">Contact</a>
+  </header>
+  
+  <% if(memes.length !== null){ %>
+    
       <% memes.forEach(function(q){ %>
       <div class="container">
         <img class="container__image" src=<%= q["url"]  %> >
         <div class="container__text"> 
-          <p><b>Title: </b><%= q["name"] %></p>
+          <p><b>Name: </b><%= q["name"] %></p>
           <p><b>Caption: </b><%= q["caption"] %></p>
-          <a href="more/<%= q[_id] %>" class="btn btn-primary">Read More</a>
+          <a href="show/<%= q.name %>" class="btn btn-sm-primary">Read More</a>
+        
       </div>
       </div>
     <% }) %>
     
-<% } %>
-<% if(error !== null){ %>
+  <% } %>
+  <% if(error !== null){ %>
   <p><%= error %></p>
-<% } %>
+  <% } %>
+
+
+
 <%- include("partials/footer") %>
+
+
 

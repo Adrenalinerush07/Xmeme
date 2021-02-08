@@ -2,6 +2,24 @@
   margin: 0px;
   padding: 0px;
 }
+header {
+  margin-left: 25%;
+  margin-right: 25%;
+  /* text-align: center; */
+}
+h1 {
+  font-size: 64px;
+  margin-bottom: 16px;
+}
+
+header a {
+  font-size: 19px;
+  color: #0c0707;
+  margin-right: 12px;
+  text-decoration: solid;
+  background-color: lightgrey;
+}
+
 body {
   font-family: Verdana;
   background-color: lightgrey;
@@ -15,7 +33,7 @@ body {
   padding: 10px 0px;
 }
 form {
-  margin-top: 15%;
+  /* margin-top: 15%; */
   margin-left: 25%;
   margin-right: 25%;
   text-align: center;
@@ -36,8 +54,8 @@ input[type="text"]:focus {
   background-color: lightblue;
 }
 .btn {
-  background-color: #707070;
-  color: white;
+  background-color: #050000;
+  color: rgb(11, 202, 228);
   font-size: 1.125em;
   width: 30%;
   height: 60px;
@@ -48,7 +66,7 @@ input[type="text"]:focus {
   cursor: pointer;
 }
 .btn:hover {
-  background-color: grey;
+  background-color: rgb(33, 218, 104);
 }
 
 .container {

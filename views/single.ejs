@@ -1,0 +1,22 @@
+<%- include("partials/header") %>
+
+
+  <header>
+    <a href="/">Post it! </a>
+    <a href="/show">Memes</a>
+    <a href="/contact">Contact</a>
+  </header>
+    <% if(memes) { %>  
+
+      <div class="container">
+        <img class="container__image" src=<%= memes["url"]  %> >
+        <div class="container__text"> 
+          <p><b>Name: </b><%= memes["name"] %></p>
+          <p><b>Caption: </b><%= memes["caption"] %></p>     
+      </div>
+      </div>
+
+    <%}%>
+
+   
+<%- include("partials/footer") %>
