@@ -71,19 +71,20 @@ app.post("/add", async(req, res) => {
     const url = req.body.url;
     const caption = req.body.caption;
 
-    const check = Post.findOne({url : url})
-    if( check !== null){
-      // res.redirect('/');
-      res.render('error',{error:'Post already present!'})
-      return;
-    }
+    // const check = Post.findOne({url : url})
+    // if( check !== null){
+    //   console.log('lunk')
+    //   res.render('error',{error:'Post already present!'})
+    //   return;
+    // }
+
     const savePost = new Post({
       name,
       url,
       caption
     })
-    const saved = await savePost.save()
-    res.status(201).redirect("show")
+    await savePost.save()
+    res.status(201).redirect("/show")
   }
   catch (err){
     res.status(404).render("error",{error: err})
@@ -124,7 +125,6 @@ app.get('/memes/:id', async (req, res) => {
     res.status(404);
     return;
   }
-  console.log(memes)
   res.status(200).send(memes);
 })
 
@@ -141,7 +141,7 @@ app.post("/memes", async(req, res) => {
       caption
     })
     const saved = await savePost.save()
-    res.status(201).send(saved.id)
+    res.status(201).send({id: saved.id})
   }
   catch(err){
     res.status(404).render("error",{error: 'Unable to post'})
@@ -149,13 +149,14 @@ app.post("/memes", async(req, res) => {
 
 });
 
+
 // updating a meme
 app.patch('/memes/:id', async (req, res) => {
   try{
     const memes = await Post.findById(req.params.id)
     if(memes === null){
       res.status(404)
-      return
+      return;
     }
     memes.caption = req.body.caption;
     memes.url = req.body.url;
