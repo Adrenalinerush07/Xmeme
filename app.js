@@ -60,10 +60,11 @@ app.post("/add", async(req, res) => {
 
 });
 
-app.get('/show/:name', async (req, res) => {
+app.get('/show/:id', async (req, res) => {
   console.log(req.params);
   console.log('kartik');
-  const memes = await Post.findOne({ name: req.params.name })
+  const memes = await Post.findOne({ _id: req.params.id })
+  console.log(memes)
   if (memes == null) res.redirect('/')
   res.render('single', { memes: memes })
 })
