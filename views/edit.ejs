@@ -1,0 +1,21 @@
+<%- include("partials/header") %>
+<!-- <div id="tittle">Post it!</div> -->
+
+<div class="container">
+    <header>
+        <a href="/">New post it! </a>
+        <a href="/show">Memes</a>
+        <a href="/contact">Contact</a>
+    </header>
+    
+    <form action="/updated/<%= memes.id %>?_method=PATCH" method="POST">
+        <label for="search" ><b>URL:</b></label>
+        <input  type="text" placeholder="Link" value="<%= memes.url %>" name="url" required><br>
+        <label for="search"><b>Caption:</b></label>
+        <input  type="text" placeholder="Add a catchy label" value="<%= memes.caption %>" name="caption" required><br>
+        <button class=btn> submit</button>
+    </form>
+    
+</div>
+
+<%- include("partials/footer") %>
