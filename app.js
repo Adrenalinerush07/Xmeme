@@ -51,7 +51,7 @@ app.patch('/updated/:id', async (req, res) => {
   try{
     const memes = await Post.findById(req.params.id)
     if(memes === null){
-      res.status(404).send("error")
+      res.status(404).send("error",{error: 'Post not found!'})
       return
     }
     memes.caption = req.body.caption;
@@ -72,12 +72,11 @@ app.post("/add", async(req, res) => {
     const url = req.body.url;
     const caption = req.body.caption;
 
-    // const check = Post.findOne({url : url})
-    // if( check !== null){
-    //   console.log('lunk')
-    //   res.render('error',{error:'Post already present!'})
-    //   return;
-    // }
+    const check = await Post.findOne({url : url})
+    if( check !== null){
+      res.render('error',{error:'Post already present!'})
+      return;
+    }
 
     const savePost = new Post({
       name,
@@ -105,8 +104,8 @@ app.get("/show", async (req, res) => {
 app.get('/show/:id', async (req, res) => {
   const memes = await Post.findOne({ _id: req.params.id })
   if(memes === null){
-    res.status(404).send("error");
-    return
+    res.status(404).send("error",{error: 'Post not found!'});
+    return;
   }
   res.status(200).render('single', { memes: memes })
 })
