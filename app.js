@@ -61,7 +61,7 @@ app.patch('/updated/:id', async (req, res) => {
     res.status(201).redirect('/show'); 
   }
   catch (err){
-    res.status(404).render("error",{error: err})
+    res.status(400).render("error",{error: err})
   }
 })
 
@@ -88,7 +88,7 @@ app.post("/add", async(req, res) => {
     res.status(201).redirect("/show")
   }
   catch (err){
-    res.status(404).render("error",{error: err})
+    res.status(400).render("error",{error: err})
   }
 
 });
@@ -145,7 +145,7 @@ app.post("/memes", async(req, res) => {
     res.status(201).send({id: saved.id})
   }
   catch(err){
-    res.status(404).render("error",{error: 'Unable to post'})
+    res.status(400).render("error",{error: 'Unable to post'})
   }
 
 });
@@ -167,7 +167,7 @@ app.patch('/memes/:id', async (req, res) => {
     return;
   }
   catch (err){
-    res.status(404).render("error",{error: 'Unable to post'})
+    res.status(400).render("error",{error: 'Unable to post'})
   }
 })
 
