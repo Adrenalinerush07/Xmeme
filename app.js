@@ -102,7 +102,7 @@ app.post("/add", async(req, res) => {
 
 // Route for showing all memes
 app.get("/show", async (req, res) => {
-  const memes = await Post.find().sort({createdAt: 'desc'})
+  const memes = await Post.find().sort({createdAt: 'desc'}).limit(100)
   res.status(200).render('results', {memes, error: undefined})
 })
 
@@ -121,7 +121,7 @@ app.get('/show/:id', async (req, res) => {
 
 // Getting all posted memes in chronological order
 app.get("/memes", async (req, res) => {
-  const memes = await Post.find().sort({createdAt: 'desc'})
+  const memes = await Post.find().sort({createdAt: 'desc'}).limit(100)
   res.status(200).send(memes)
 })
 
