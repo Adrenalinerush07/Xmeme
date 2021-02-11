@@ -13,14 +13,14 @@ app.use(methodOverride('_method'))
 app.use(express.json())
 
 // Conecting to mongodb
-// mongoose.connect('mongodb://localhost:27017/Xmeme', {
-//   useNewUrlParser: true, useUnifiedTopology: true, useCreateIndex: true
-// })
-
-
-mongoose.connect('mongodb+srv://KartikJaiswal:l13yFSWpb2YU1qR5@blog.smyeg.mongodb.net/Xmemev2?retryWrites=true&w=majority', {
+mongoose.connect('mongodb://localhost:27017/Xmeme', {
   useNewUrlParser: true, useUnifiedTopology: true, useCreateIndex: true
 })
+
+
+// mongoose.connect('mongodb+srv://KartikJaiswal:l13yFSWpb2YU1qR5@blog.smyeg.mongodb.net/Xmemev2?retryWrites=true&w=majority', {
+//   useNewUrlParser: true, useUnifiedTopology: true, useCreateIndex: true
+// })
 
 
 // Route for home page (posting a new meme)
