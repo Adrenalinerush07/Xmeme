@@ -177,7 +177,7 @@ app.patch('/memes/:id', async (req, res) => {
 })
 
 // Server listening
-const port = process.env.PORT || 3000;
+const port = process.env.PORT || 8081;
 app.listen(port, () => {
     console.log('Server is up mate ' + port)
 });

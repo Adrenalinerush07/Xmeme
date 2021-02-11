@@ -1,3 +1,12 @@
+#!/bin/bash
+
+
+# git clone the repo
+
+# cd to the cloned repo directory
+
+
+# Run the user’s installation steps which will install any necessary dependencies required for the server to run, with sudo permission
 
 chmod +x install.sh
 
@@ -24,12 +33,12 @@ chmod +x sleep.sh
 
 # Should return an empty array.
 
-curl --location --request GET 'http://localhost:3000/memes'
+curl --location --request GET 'http://localhost:8081/memes'
 
 
 # Execute the POST /memes endpoint using curl
 
-curl --location --request POST 'http://localhost:3000/memes' \
+curl --location --request POST 'http://localhost:8081/memes' \
 
 --header 'Content-Type: application/json' \
 
@@ -46,4 +55,4 @@ curl --location --request POST 'http://localhost:3000/memes' \
 
 # Execute the GET /memes endpoint using curl
 
-curl --location --request GET 'http://localhost:3000/memes'
+curl --location --request GET 'http://localhost:8081/memes'
