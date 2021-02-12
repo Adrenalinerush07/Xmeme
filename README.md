@@ -7,7 +7,7 @@
   <h3 align="center">Xmeme</h3>
 
   <p align="center">
-    An place where you can share, edit memes.
+    A place where you can share and edit memes.
     <br />
     <a href="https://github.com/Adrenalinerush07/Xmeme/blob/main/README.md"><strong>Explore the docs »</strong></a>
     <br />
