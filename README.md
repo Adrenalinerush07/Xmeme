@@ -49,14 +49,14 @@
 
 [![Product Name Screen Shot][product-screenshot]](https://kartik-xmeme-app.herokuapp.com/)
 
-Users can post and edit funny memes on the website with is build on node.js and MongoDB for the backend.
-EJS is used for building pages dynamically.
+Users can post and edit funny memes on this website which is build with node.js for backend and MongoDB for the database.
+EJS is used for rendering pages dynamically.
 
 The basic idea for making this project is to build a rest API which includes get, post, patch.
-This project also includes scripts for testing the server so testing is all automated from installation
+This project also includes scripts in Shell for testing the server so the testing part is all automated from installation
 to starting the server. Besides, there is also a docker image of the whole software to make testing even easier.
 
-Error handle is also handled with great care with properly commented code.
+Error handle is also handled with great care and code is properly commented.
 Status code is attached to every response.
 
 ### Built With
@@ -84,12 +84,12 @@ Status code is attached to every response.
    ```sh
    node app.js
    ```
-4. Visit localhost no post 8081
+4. Visit localhost on port 8081
 <!-- USAGE EXAMPLES -->
 
 ## Usage
 
-For posting a meme a user need to provide 3 things
+For posting a meme, user need to provide 3 things
 
 1. Name
 2. URL for the meme image
@@ -97,7 +97,7 @@ For posting a meme a user need to provide 3 things
 
 After providing these 3 parameters click on submit button to post your meme.
 
-After this user will be redirected to the page containing all the memes, from there user can visit a meme separately by clicking read more or can edit the meme by clicking the edit button.
+After this user will be redirected to the page containing all the memes, from there, user can visit a meme separately by clicking read more or can edit the meme by clicking the edit button.
 
 <!-- CONTRIBUTING -->
 
