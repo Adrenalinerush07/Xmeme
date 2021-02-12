@@ -64,7 +64,7 @@ Status code is attached to every response.
 - [Node.js](https://nodejs.org/dist/latest-v14.x/docs/api/)
 - [EJS](https://ejs.co/)
 - [MongoDB](https://www.mongodb.com/)
-- [Docker] (https://docs.docker.com/)
+- [Docker](https://docs.docker.com/)
 
 <!-- GETTING STARTED -->
 
