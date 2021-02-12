@@ -115,7 +115,7 @@ Contributions are what make the open source community such an amazing place to b
 
 ## Contact
 
-Your Name - kartikmnc@gmail.com
+Email - kartikmnc@gmail.com
 
 [linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
 [linkedin-url]: https://www.linkedin.com/in/kartik-jaiswal-76623a16b/
