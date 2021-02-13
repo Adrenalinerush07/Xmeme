@@ -53,27 +53,19 @@ app.post("/add", async(req, res) => {
     const url = req.body.url;
     const caption = req.body.caption;
 
-    const check = await Post.find({url : url})
+    const check = await Post.findOne({url : url})
+    if( check !== null){
+      res.render('error',{error:'Post already present!'})
+      return;
+    }
 
-    try {
-      if( check.length !== null){
-        check.forEach(function(q){
-          if(q["name"] === name && q["caption"] === caption){
-            res.render('error',{error:'Post already present!'})
-            return;
-          }
-        })
-      }
-    }
-    catch {
-      const savePost = new Post({
-        name,
-        url,
-        caption
-      })
-      await savePost.save()
-      res.status(201).redirect("/show")
-    }
+    const savePost = new Post({
+      name,
+      url,
+      caption
+    })
+    await savePost.save()
+    res.status(201).redirect("/show")
   }
   catch (err){
     res.status(400).render("error",{error: err})
