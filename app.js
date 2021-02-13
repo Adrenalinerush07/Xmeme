@@ -53,7 +53,7 @@ app.post("/add", async(req, res) => {
     const url = req.body.url;
     const caption = req.body.caption;
 
-    const check = await Post.findOne({url : url})
+    const check = await Post.findOne({url : url},{name: name},{caption: caption})
     if( check !== null){
       res.render('error',{error:'Post already present!'})
       return;
