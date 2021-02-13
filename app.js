@@ -12,7 +12,7 @@ app.use(express.static('public'));
 app.use(methodOverride('_method'))
 app.use(express.json())
 
-mongoose.connect('mongodb://localhost:27017/Xmeme', {
+mongoose.connect('mongodb://127.0.0.1:27017/Xmeme', {
   useNewUrlParser: true, useUnifiedTopology: true, useCreateIndex: true
 })
 
