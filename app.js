@@ -12,15 +12,10 @@ app.use(express.static('public'));
 app.use(methodOverride('_method'))
 app.use(express.json())
 
+// Connecting to MongoDB
 mongoose.connect('mongodb://127.0.0.1:27017/Xmeme', {
   useNewUrlParser: true, useUnifiedTopology: true, useCreateIndex: true
 })
-
-
-// mongoose.connect('mongodb+srv://KartikJaiswal:l13yFSWpb2YU1qR5@blog.smyeg.mongodb.net/Xmemev2?retryWrites=true&w=majority', {
-//   useNewUrlParser: true, useUnifiedTopology: true, useCreateIndex: true
-// })
-
 
 // Route for home page (posting a new meme)
 app.get("/", function(req, res){
@@ -32,25 +27,6 @@ app.get('/update/:id', async (req, res) => {
   const memes = await Post.findById(req.params.id)
   res.status(200).render('edit', { memes })
 })
-
-// Patch method for updating a meme
-// app.patch("updated/:id", function (res, res, next) {
-//   var id=req.params.id;
-//   var url = req.body.url;
-//   var caption = req.body.caption;
-//   console.log("kartik")
-//   Post.findById(id, function (err, data) {
-//     console.log(data)
-//     data.url=url;
-//     data.caption=caption;
-//     data.save(function (err) {
-//       if(err){
-//         throw err
-//       }
-//       res.send("Done")      
-//     })
-//   })
-// })
 
 app.patch('/updated/:id', async (req, res) => {
   try{
@@ -153,7 +129,6 @@ app.post("/memes", async(req, res) => {
   }
 
 });
-
 
 // updating a meme
 app.patch('/memes/:id', async (req, res) => {
