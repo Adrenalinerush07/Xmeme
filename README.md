@@ -66,6 +66,8 @@ Status code is attached to every response.
 - [MongoDB](https://www.mongodb.com/)
 - [Docker](https://docs.docker.com/)
 
+## I have used same URL for backend and frontend part
+
 <!-- GETTING STARTED -->
 
 ## Getting Started
